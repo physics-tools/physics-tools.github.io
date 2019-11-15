@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Statics - Physics Competition Resources</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+  </script>
+  <!--<script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>-->
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Competition Physics</div>
+      <div class="list-group list-group-flush">
+        <a href=".." class="list-group-item list-group-item-action bg-light">Home</a>
+        <p href="Statics" class="list-group-item list-group-item-action bg-light font-weight-bold">Statics</p>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Dynamics</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Orbits</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Fluids</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Thermodynamics</a>
+      </div>
+    </div>  
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Toggle</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tension.html">Tension</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="fictitious.html">Fictitious Force</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="virtual.html">Virtual Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="torque.html">Torque Balance</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="misc.html">Misc</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="extra.html">Extra Practice</a>
+            </li>
+            <!--<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>-->
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <h1 class="display-4">Statics</h1>
+        <p>Although any problem can be solved without the use of a fictitious force, it is sometimes easier to analyze it with this force. If an object is undergoing a constant acceleration, we can move into an accelerating reference frame by introducing a force with magnitude $ma$ that acts on every object of the system, and points antiparallel to the direction of the acceleration.</p>
+
+        <div class="alert alert-primary lead" role="alert">
+          Idea 3: It is often helpful to switch to an noninertial reference frame to turn a dynamic problem into a statics problem.
+        </div>
+        
+        First, we will provide a simple example of this in action.
+
+        <p><b>Problem</b>: A crate of mass $m$ lies on the ground of a truck with coefficient of friction $\mu$. What is the maximum acceleration the truck can undergo such that the crate does not slip? <br /><br />
+
+        <b>Solution</b>: To turn this into a statics problem, we can include the fictiuous force $-m\vec{a}$ such that both the truck and the crate are stationary. There is a friction force with magnitude $f=\mu mg$ in one direction and the fiticious force in the other. Balancing them gives:
+
+        $$ a = \mu g $$
+
+        This is equally as simple to solve if we consider an inertial reference frame, but using this idea with the following will lead to very interesting solutions.
+        </p>
+
+        <div class="alert alert-primary lead" role="alert">
+          Idea 4: In a non-inertial reference frame, the vector sum of the gravitational force and the fictitious force act as the effective gravity.
+        </div>
+        <p>
+        If we lived our entire lives within a windowless room, how do we know if gravity exists or if the room is just an elevator that keeps accelerating upwards? The answer is that we can't. Therefore, in a noninertial reference frame, it is perfectly fine to treat
+        
+        $$\vec{F}_g = m\vec{g} + \vec{F}_\text{fictitious}$$
+
+        <b>Problem</b>: A pendulum bob hangs from a string connected to the side of a truck. The truck is accelerating forwards with an acceleration of magnitude $a$. What is the tension force and the angle the string makes with the vertical? <br><br>
+
+        <b>Solution</b>: Let us switch to a noninertial reference frame by introduce the fictitious force $-m\vec{a}$. <br>
+
+        <center><img src="imgs/fictitious1.png" width="18%"></center><br>
+
+        If we treat the fictious force and the gravitational force as one combined effective gravity, then there are only two forces acting on the object: <br><br>
+
+        <center><img src="imgs/fictitious2.png" width="18%"></center><br>
+        Thus, the tension force must have the same magnitude as the magnitude of the effective gravity which is given by the Pythagorean theorem:
+        
+        $$
+          T = \sqrt{(mg)^2+(ma)^2} = m\sqrt{a^2+g^2}
+        $$
+        
+        And the angle the rope makes is the same angle the effective gravity makes (with the vertical) and that is given by:
+
+        $$
+          \tan\theta = \frac{a}{g}
+        $$
+        </p>
+
+        
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>
