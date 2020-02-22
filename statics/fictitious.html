@@ -101,22 +101,25 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="display-4">Statics</h1>
-        <p>Although any problem can be solved without the use of a fictitious force, it is sometimes easier to analyze it with this force. If an object is undergoing a constant acceleration, we can move into an accelerating reference frame by introducing a force with magnitude $ma$ that acts on every object of the system, and points antiparallel to the direction of the acceleration.</p>
+        <h1 class="display-3">Statics</h1>
+        <h1 class="display-4">The Fictitious Force</h1>
+        <div class="alert alert-secondary lead" role="alert">
+          Although any problem can be solved without the use of a fictitious force, it is sometimes easier to analyze it with this force. If an object is undergoing a constant acceleration, we can move into an accelerating reference frame by introducing a force with magnitude $ma$ that acts on every object of the system, and points antiparallel to the direction of the acceleration.
+        </div>
 
         <div class="alert alert-primary lead" role="alert">
           Idea 3: It is often helpful to switch to an noninertial reference frame to turn a dynamic problem into a statics problem.
         </div>
         
-        First, we will provide a simple example of this in action.
+        First, we will provide a simple example of this in action. <br><br>
 
-        <p><b>Problem</b>: A crate of mass $m$ lies on the ground of a truck with coefficient of friction $\mu$. What is the maximum acceleration the truck can undergo such that the crate does not slip? <br /><br />
+        <button type="button" class="btn btn-primary">Problem</button> A crate of mass $m$ lies on the ground of a truck with coefficient of friction $\mu$. What is the maximum acceleration the truck can undergo such that the crate does not slip? <br /><br />
 
-        <b>Solution</b>: To turn this into a statics problem, we can include the fictiuous force $-m\vec{a}$ such that both the truck and the crate are stationary. There is a friction force with magnitude $f=\mu mg$ in one direction and the fiticious force in the other. Balancing them gives:
+        <button type="button" class="btn btn-success">Solution</button> To turn this into a statics problem, we can include the fictiuous force $-m\vec{a}$ such that both the truck and the crate are stationary. There is a friction force with magnitude $f=\mu mg$ in one direction and the fiticious force in the other. Balancing them gives:
 
         $$ a = \mu g $$
 
-        This is equally as simple to solve if we consider an inertial reference frame, but using this idea with the following will lead to very interesting solutions.
+        Although this first example is trivial, using this with the following idea will lead to very interesting solutions.
         </p>
 
         <div class="alert alert-primary lead" role="alert">
@@ -127,16 +130,16 @@
         
         $$\vec{F}_g = m\vec{g} + \vec{F}_\text{fictitious}$$
 
-        <b>Problem</b>: A pendulum bob hangs from a string connected to the side of a truck. The truck is accelerating forwards with an acceleration of magnitude $a$. What is the tension force and the angle the string makes with the vertical? <br><br>
+        <button type="button" class="btn btn-primary">Problem</button> A pendulum bob hangs from a string connected to the side of a truck. The truck is accelerating forwards with an acceleration of magnitude $a$. What is the tension force and the angle the string makes with the vertical? <br><br>
 
-        <b>Solution</b>: Let us switch to a noninertial reference frame by introduce the fictitious force $-m\vec{a}$. <br>
+        <button type="button" class="btn btn-success">Solution</button> Let us switch to a noninertial reference frame by introduce the fictitious force $-m\vec{a}$. <br>
 
         <center><img src="imgs/fictitious1.png" width="18%"></center><br>
 
         If we treat the fictious force and the gravitational force as one combined effective gravity, then there are only two forces acting on the object: <br><br>
 
         <center><img src="imgs/fictitious2.png" width="18%"></center><br>
-        Thus, the tension force must have the same magnitude as the magnitude of the effective gravity which is given by the Pythagorean theorem:
+        Thus, the tension force must have the same magnitude as the effective gravity which is given by the Pythagorean theorem:
         
         $$
           T = \sqrt{(mg)^2+(ma)^2} = m\sqrt{a^2+g^2}
@@ -148,8 +151,85 @@
           \tan\theta = \frac{a}{g}
         $$
         </p>
-
         
+        We have seen fictitious forces in translational motion, however they apply to rotational motion as well. <br><br>
+        
+        <h1 class="display-4">The Centrifugal Force</h1>
+        <div class="alert alert-secondary lead" role="alert">
+          The terms "centripetal" and "centrifugal" forces are thrown around interchangebly, yet they are very different from one another. First: the centripetal force is real. It is the term which we give to the sum of all the forces facing in the radial direction. We do not include it in our free body diagrams. The centrifugal force on the other hand, is not real, and only exists when we pretend the object rotating is stationary by switching into an accelerating reference.
+        </div>
+
+
+        In this case, we will include the centrifugal force $F_c = -m\omega^2r$ and draw it on our free body diagram facing outwards. <br><br>
+
+        <button type="button" class="btn btn-primary">Problem</button> Consider a circular pendulum with mass $m$ and length $\ell$ as shown below. The mass swings around a horizontal circle such that the massless string always makes an angle $\theta$ with the vertical. Find the resultant angular velocity $\omega$ as a result of this motion. <br><br>
+
+        <center><img src="imgs/fictitious3.png" width="18%"></center><br>
+
+        <button type="button" class="btn btn-success">Solution</button> We first switch into a rotating frame of reference of reference and draw a free body diagram.
+
+        <center><img src="imgs/fictitious4.png" width="18%"></center><br>
+
+        Again, we can employ idea 4 and combine the centrifugal force and gravitational force into one:
+
+        <center><img src="imgs/fictitious5.png" width="18%"></center><br>
+
+        The angle the rope makes is just the angle the effective gravitational force makes with the vertical, or:
+
+        $$\tan\theta = \frac{\omega^2 r}{g}$$
+        <hr>
+        The previous examples were somewhat easy even using basic Newtonian mechanics. However, the following example will be extremely difficult to solve with the knowledge your previously have. It's also a sneak peek to the fluids chapter!
+        <hr>
+        <button type="button" class="btn btn-primary">Problem</button> A cylindrical tube is partly filled with water. It is then rotated around its central axis with a constant angular velocity $\omega$. In steady state, the water is curved in the shape of a parabola as shown. What must be $\omega$ be such that the water depth shown is exactly equal to the radius of the cylinder $R$? 
+
+        <center><img src="imgs/fictitious6.png" width="18%"></center><br>
+
+        <button type="button" class="btn btn-success">Solution</button> To solve this problem, we need to bring in idea 9: All static fluids have an equipotential surface. A regular water surface is flat so the potential energy of all the surface particles is $mgh$. But how can we apply this concept when the water is moving? Easy: we switch into a rotating reference frame. <br>
+        
+        Recall from idea 4 that a fictitious force behaves just as a gravitational force behaves. This means just as there is a potential associated with gravity, there is a potential associated with the fictitious force. This leads to our next idea: <br><br>
+        
+        <div class="alert alert-primary lead" role="alert">
+          Idea 6: In a non-inertial reference frame, the fictitious force contributes its own potential energy.
+        </div>
+        
+        For a rotating reference frame, it is given by:
+
+        \begin{align*}
+        U &= -\int_0^r \vec{F} \cdot d\vec{r} \\
+        &= -\int_0^r m\omega^2r \cdot dr \\
+        &= -\frac{1}{2}m\omega^2r^2
+        \end{align*}
+
+        Note that this is the <i>negative</i> of the kinetic energy. Conceptually, this makes sense if we can think about the motion of the water particles dissipating some of its gravitational potential energy. Therefore: the potential of a water molecule located at a location $(h,r)$ is:
+
+        $$V_\text{total} = gh - \frac{1}{2}\omega^2r^2$$
+
+        Let us set $h=0$ for the very bottom of the parabola where the water molecules aren't moving meaning there, $V=0$. Since we have already moved to a noninertial reference frame, the fluid is static and thus everywhere on the fluid we have $V=0$ Letting $r=h=R$ we get:
+
+        \begin{align*}
+        0 &= gR - \frac{1}{2}\omega^2 R^2 \\
+        \omega^2 &= \frac{2g}{R}
+        \end{align*}
+
+        As a side note, you may be familiar with other fictitious forces: the coriolsis force, the azmiuthal force, or maybe others. However, those forces are often associated with dynamics and not statics and will be treated with at a different time.
+
+        <h1 class="display-3">Exercises</h1>
+        <b>Exercise: </b> (Kalda) A block rests on an inclined surface with slope angle $\alpha$. The surface moves with a horizontal acceleration a which lies in the same vertical plane as a normal vector to the surface. Determine the values of the coefficient of friction µ that allow the block to remain still.
+        <center><img src="imgs/fictitious7.png" width="18%"></center><br>
+
+        <b>Exercise: </b> (Kalda) A cylinder with radius R spins around its axis with an angular speed $\omega$. On its inner surface there lies a small block; the coefficient of friction between the block and the inner surface of the cylinder is $\mu$. Find the values of ω for which the block does not slip (stays still with respect to the cylinder). Consider the cases where (a) the axis of the cylinder is horizontal; (b) the axis is inclined by angle α with respect to the horizon.
+        <center><img src="imgs/fictitious8.png" width="18%"></center><br>
+
+        <b>Exercise: </b> (Kalda) A cart has two cylindrical wheels connected by a weightless horizontal rod using weightless spokes and frictionless axis as shown in the figure. Each of the wheels is made of a homogeneous disc of radius $R$, and has a cylidrical hole of radius $R/2$ drilled coaxially at the distance $R/3$ from the centre of the wheel. The wheels are turned so that the holes point towards each other, and the cart is put into motion on a horizontal floor. What is the critical speed $v$ by which the wheels start jumping?
+
+        <center><img src="imgs/fictitious9.png" width="18%"></center><br>
+
+        <h1 class="display-3">Challenges</h1>
+
+        <b>Challenge: </b> (Morin) A block of mass $m$ is held motionless on a frictionless plane of mass $M$ and angle of inclination $\theta$. The plane rests on a frictionless horizontal surface. The block is released. What is the horizontal acceleration of the plane?
+        <center><img src="imgs/fictitious10.png" width="18%"></center><br>
+        <b>Challenge: </b> (F=ma 2016) A uniform thin circular rubber band of mass $M$ and spring constank $k$ has an original radius $R$. Now it is tossed into the air. Assume it remains circular when stabilized in air and rotates at angular speed $\omega$ about its center uniformly. What is the new radius of the rubber band? <br><br>
+        <b>Challenge: </b> A fluid-containing cylinder of height $H$, height of fluid column $h$, radius $R$, is rotated about its axis with constant $\omega$. What is the maximum $\omega$ such that the fluid does not spill out of the cylinder?
       </div>
       <br><br><br><br><br><br><br><br><br><br><br><br>
     </div>

@@ -90,15 +90,128 @@
       </nav>
 
       <div class="container-fluid">
+        <h1 class="display-3">Statics</h1>
         <h1 class="display-4">Virtual Work</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit, libero quis laoreet tempor, magna nulla suscipit quam, et aliquet quam massa nec neque. Cras cursus quam vel consectetur interdum. Vestibulum pellentesque urna ut quam ultrices lobortis. Etiam congue viverra ante ac scelerisque. Vestibulum congue erat eu ultrices semper. Sed pellentesque libero at metus euismod, sit amet convallis lectus condimentum. Nulla tempus augue id ipsum cursus, a mattis quam consectetur. Proin ut nulla gravida, mattis justo vel, pellentesque massa. Suspendisse augue justo, sodales in porttitor ac, rutrum at tellus. Suspendisse fermentum turpis non lectus condimentum, ac iaculis quam condimentum. Sed lacinia sagittis metus, imperdiet malesuada metus tempus vel. Vivamus nibh est, sodales at risus ullamcorper, interdum ornare risus.</p>
+        <div class="alert alert-secondary lead" role="alert">
+          A useful tool when solving static equilibrium problems is to actually use energy! The main advantage of this method is that energy is a scalar. You do not have to break vectors up into components or even understand where the forces come from, if you can accurately depict the energy of a system.
+        </div>
+        An object will always try to seek a lower potential. At a stable equilibrium, the potential energy will thus be at a local minimum. For example, if a ball has a potential energy $U(x)=kx^2$ (e.g. on a hill shaped like a parabola), we know that it will be in static equilibrium when $x=0$. <br><br>
+
+        However, there is another way of stating it that is perhaps more useful for problem solving. At equilibrium, if a tiny disturbance is made to the system, the potential energy will remain constant. At the bottom of a hill, if we change its displacement by $dx$, the height and thus the potential energy will remain constant since $\frac{dy}{dx}=0$ at the bottom. This leads to the following idea: <br><br>
 
         <div class="alert alert-primary lead" role="alert">
           Idea 5: For a system at equilibrium, a tiny displacement $dx$ away from the equilibrium point will not change the potential energy of the system.
         </div>
 
-        <p>insert description + example problems / solutions here</p>
+        We can prove this in a slightly more rigorous way. If an object is in static equilibrium and we want to displace it by a tiny bit $dx$, the work required is:
+
+        $$dW = F_\text{net} dx$$
+
+        However, since $F_\text{net}=0$, this implies $dW$ and thus the change in energy is also zero. We will use this to solve a multitude of problems. <br><br>
+
+        <button type="button" class="btn btn-primary">Problem</button> Refer to the below balance. An object of mass $m$ is placed a distance $\ell$ to the left of the fulcrum. Where should we place a mass $M$ such that the system is in static equilibrium?
+        <center><img src="imgs/virtual01.png" width="50%"></center><br>
+
+        <button type="button" class="btn btn-success">Solution</button> Suppose the system is already in equilibrium. Let us see what happens if we rotate the beam by an angle $d\theta$ counterclockwise. The potential energy of $m$ will change by:
+
+        $$\Delta U_1 = -mg(\ell d\theta)$$
+
+        and the potential energy of $M$ will change by:
+
+        $$\Delta U_2 = +Mg(x d\theta)$$
+
+        Since we know that $\Delta U_\text{total} = 0$ we have:
+
+        \begin{align*}
+        0 &= Mg(x d\theta) -mg(\ell d\theta) \\
+        0 &= Mx - m\ell \\
+        x &= \frac{m\ell}{x}
+        \end{align*}
+<hr>
+        Although this could have just as easily be solved by torque, we can apply this technique to many more scenarios.
+<hr>
+        <button type="button" class="btn btn-primary">Problem</button> A disk of mass $M$ is on an inclined plane elevated at an angle $\theta$, connected to a block of mass $m$ with a massless rope. What is the mass $m$ as a function of $M$? The disk cannot slip.
+
+        <center><img src="imgs/virtual02.png" width="24%"></center><br>
+
+        <button type="button" class="btn btn-success">Solution</button> Again, suppose the system is in equilibrium and let us displace the block by a distance $dx$. Its potential energy will thus drop by $-mg(dx)$. The disk as a result will move up. The top of the disk will travel a distance $dx$ so the center of mass will only travel a distance $\frac{dx}{2}$. The total change in energy is thus zero, or:
+
+        \begin{align*}
+        0 &= -mg(dx) + Mg\left(\frac{dx}{2} \sin\theta\right) \\
+        m &= \frac{1}{2}M\sin\theta
+        \end{align*}
+
+        Compare this with balancing forces and torques. It's so much easier!
+<hr>
+        Even when there are nonconservative forces (like tension), we can still use the principle of virtual work!
+<hr>
+
+        <button type="button" class="btn btn-primary">Problem</button> An object of mass $m$ hangs from two ropes, as shown below. What are the two tensions $T_a$ and $T_b$?
+        <center><img src="imgs/virtual03.png" width="30%"></center><br>
+        <button type="button" class="btn btn-success">Solution</button> We will have to use the principle of virtual work twice. First, we will displace the object in the x direction, then displace it in the y-direction. Since our displacements $dx$ and $dy$ are so small, the tension force is unchanged. <br><br>
         
+        If we displace it $dx$ to the right, the right rope will be doing positive work while the left rope will be doing negative work. We want $dW_x$ to be zero or:
+        $$ 0 = T_{b,x} (dx) - T_{a,x} (dx) \to T_{b,x} = T_{a,x}$$
+
+        If we displace it $dx$ upwards, both ropes will be doing positive work while gravity will be doing negative work. We want $dW_y$ to be zero or:
+
+        \begin{align*}
+        0 &= T_{a,y} (dy) + T_{a,y} (dy) - mg (dy) \\
+        mg &= T_{a,y} + T_{b,y}
+        \end{align*}
+
+        Using $\frac{T_{a,y}}{T_{a,x}} = \frac{c}{a}$, we can now write out expressions for both $T_a$ and $T_y$. Note that this isn't much different from using Newton's Laws. It was solely just a demonstration on how to use this trick when constraints are given.
+        <hr>
+        This last example was different than the ones before because instead of setting $\Delta U=0$ we set $dW=0$. Please note that these are in fact the same. The second was just a more general case where energy may not be conserved.
+        <hr>
+        <button type="button" class="btn btn-primary">Problem</button> The Earth is not a perfect sphere. At the equator, the radius is $r_e$ and at the poles, the radius is $r_p$. This is caused by the Earth spinning at an angular velocity $\omega$. What is $r_p-r_e$? <br><br>
+        <button type="button" class="btn btn-success">Solution</button> First, we will turn this into a static problem by switching into a noninertial reference frame introduced in the <a href="fictitious.html">section on fictitious forces</a> where we have shown that the potential associated with the rotation is:
+        $$U = -\frac{1}{2}m\omega^2 r^2$$
+        If we place a ball on anywhere on the surface of the planet, it should be in static equilibrium. Thus: the potential energy at the equator is equal to the potential energy at the poles. We have:
+        \begin{align*}
+        \Delta U &= 0 \\
+        0 &= mg(r_p-r_e) - \frac{1}{2}m\omega^2r^2 \\
+        \Delta h &= \frac{\omega^2 r^2}{2g}
+        \end{align*}
+        <hr>
+        The derivation above was actually, slightly wrong. The calculated number would have been $11 \text{ km}$ while the actual difference was $21 \text{ km}$. This is mostly due to the assumption that the potential at any point near its surface is $mgh$. This is only true for a sphere, not an elliptoid. For a detailed discussion, see this <a href="https://physics.stackexchange.com/questions/8074/why-is-the-earth-so-fat">stack exchange</a> post.
+        <hr>
+        <button type="button" class="btn btn-primary">Problem</button> What is the pressure difference $\Delta P$ in a soap bubble with radius $r$ made with a thin transparent film of soap with surface tension $\gamma$? <br><br>
+
+        <button type="button" class="btn btn-success">Solution</button> If you do not know already, the potential energy stored through surface tension is:
+
+        $$U = \gamma A = \gamma 2 \cdot (4\pi r^2)$$
+        
+        where $A$ is the area. Notice that there is a $2$ because there is both an inside and outside surface. Consider what happens if the bubble expands by $dr$ then the change in potential energy will be:
+
+        $$dU = d(8\pi r^2\gamma) = 16\pi r \gamma dr$$
+
+        However, pressure be doing positive work on the soap bubble as well. The work is given by:
+
+        \begin{align*}
+        dW &= \Delta PdV \\
+        &= \Delta P d\left(\frac{4}{3}\pi r^3\right) \\
+        &= \Delta P (4\pi r^2) dr
+        \end{align*}
+
+        Setting them equal to each other gives $dW = dU$ or:
+
+        $$\Delta P = \frac{4\gamma}{r}$$
+
+        <hr>
+        <div class="alert alert-secondary lead" role="alert">
+          We have now come up with three different equations to use for virtual work:
+        $$dU = 0$$
+        $$dW = 0$$
+        $$dW = dU$$
+        Make no mistake. These are all inherently the same thing. It just depends on what you set as your system. For example, lifting up a ball increases its energy, but the gravitational work being done will be negative. This comes from the fact that:
+        $$F = -\frac{dU}{dx}$$
+        or
+        $$ dW = - dU $$
+        Making this substitution allows us to use any of the three equations for any scenario interchangeably. It's just that sometimes it might make more sense. For example, instead of saying pressure does positive work I could've said the pressure causes the bubble to lose some energy through expanding and that is equal to the $-\Delta P dV$ instead. These two statements are completely equivalent.
+        </div>
+        
+        </hr>
       </div>
       <br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
