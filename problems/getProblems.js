@@ -64,7 +64,14 @@ divContainer.innerHTML = "";
 divContainer.appendChild(table);
 }
 
-
+function stars(num){
+    var n = parseInt(num);
+    var s = "";
+    for(var i=0;i<n;i++){
+        s += "★";
+    }
+    return(s);
+}
 function prepare(type,tab){
 
 localStorage.clear();
@@ -89,9 +96,9 @@ googleSpreadsheet.load(function(result) {
     if(t[i] != "-"){
         var temp = {};
         temp["Problem"] = t[i];
-        temp["Rating"] = t[i+1];
-        temp["Difficulty"] = t[i+2];
-        temp["Length"] = t[i+3];
+        temp["Rating"] = stars(t[i+1]);
+        temp["Difficulty"] = stars(t[i+2]);
+        temp["Length"] = stars(t[i+3]);
         temp["Description"] = t[i+4];
         test.push(temp);
     }
