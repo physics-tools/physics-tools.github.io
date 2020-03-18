@@ -82,7 +82,6 @@ var googleSpreadsheet = new GoogleSpreadsheet();
 var t = 1;
 var test = [];
 var start=0;
-
 googleSpreadsheet.url(url);
 googleSpreadsheet.load(function(result) {
   t = JSON.parse(JSON.stringify(result).replace(/,/g,",\n")).data;
@@ -115,3 +114,4 @@ prepare("em","emData");
 prepare("thermo","thermoData");
 prepare("waves","waveData");
 prepare("modern","modernData");
+prepare("kinematics","kinData");
