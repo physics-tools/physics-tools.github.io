@@ -53,8 +53,8 @@ for (var i = 0; i < probList.length; i++) {
             if(u !== "Physics-Cup"){
                 tabCell.innerHTML = "<a href='../archive/"+u+".pdf'>"+probList[i][col[j]]+"</a><a href='../archive/"+u+"-S.pdf'> [S]";
             }
-            else{
-                tabCell.innerHTML = probList[i][col[j]]
+            else if(u == "Physics-Cup"){
+                tabCell.innerHTML = "<a href='https://physicscup.ee/'>"+probList[i][col[j]]+"</a>";
             }
         }
         else{
