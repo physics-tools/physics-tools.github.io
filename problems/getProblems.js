@@ -18,7 +18,7 @@ var tr = table.insertRow(-1);                   // TABLE ROW.
 
 
 var th = document.createElement("th");
-th.setAttribute("width","15%");
+th.setAttribute("width","18%");
 th.innerHTML = col[0];
 tr.appendChild(th);
 
@@ -50,7 +50,12 @@ for (var i = 0; i < probList.length; i++) {
         var tabCell = tr.insertCell(-1);
         if(j == 0){
             var u=probList[i][col[0]].split(" ")[0]+"-"+probList[i][col[0]].split(" ")[1];
-            tabCell.innerHTML = "<a href='../archive/"+u+".pdf'>"+probList[i][col[j]]+"</a>";
+            if(u !== "Physics-Cup"){
+                tabCell.innerHTML = "<a href='../archive/"+u+".pdf'>"+probList[i][col[j]]+"</a><a href='../archive/"+u+"-S.pdf'> [S]";
+            }
+            else{
+                tabCell.innerHTML = probList[i][col[j]]
+            }
         }
         else{
             tabCell.innerHTML = probList[i][col[j]]
