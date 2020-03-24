@@ -6,7 +6,7 @@
 *{
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
 a{
@@ -41,6 +41,7 @@ body{
   height: 100%;
   background: #42455a;
 }
+
 .menu ul{
   display: inline-flex;
   margin: 50px;
@@ -106,7 +107,7 @@ body{
 }
 
 .app-text{
-  width:50%;
+  width:100%;
   float: left;
 }
 
@@ -120,24 +121,21 @@ body{
 
 .app-text h2{
    font-size: 43px;
-   width: 640px;
+   width: linewidth;
    position: relative;
    margin-left: 40px;
 
 }
 .app-text p{
-   font-size: 15px;
-   width: 650px;
+   font-size: 17px;
    margin: 30px 0 30px 40px;
    line-height: 25px;
-   color: #919191;
-
+   color: #ebebeb;
 }
-.app-picture{
-  width: 50%;
-  float: right;
-
-}
+/* .app-picture{
+  width: 120%;
+  float: center;
+} */
 .app-picture img{
   width: 100%;
   margin-top: -20px;
@@ -152,20 +150,22 @@ small{
   letter-spacing: 3px;
 }
 .sponsors ul li img{
-  width: 50px;
+  width: 150px;
   height: auto;
 }
 .sponsors{
+  width:100%;
+  float: left;
   height: 150px;
   left: 0;
   bottom:0;
-  position: absolute;
-  background: linear-gradient(to right, rgb(20, 149, 56), rgb(19, 127, 198));
+  /* position: absolute; */
+  /* background: #42455a; */
 }
 .sponsors h3{
    font-size: 20px;
    width: 200px;
-   margin-left: 200px;
+   text-align: center;
    color: #fff
 }
 
@@ -206,4 +206,12 @@ small{
   border: 1px solid #999;
   padding: 5px;
   display: block;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
 }
