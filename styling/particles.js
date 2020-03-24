@@ -59,7 +59,7 @@ var pJS = function(tag_id, params){
         random: false,
         anim: {
           enable: false,
-          speed: 20,
+          speed: 10,
           size_min: 0,
           sync: false
         }
@@ -244,7 +244,7 @@ var pJS = function(tag_id, params){
     this.radius = (pJS.particles.size.random ? Math.random() : 1) * pJS.particles.size.value;
     if(pJS.particles.size.anim.enable){
       this.size_status = false;
-      this.vs = pJS.particles.size.anim.speed / 100;
+      this.vs = pJS.particles.size.anim.speed / 100000000;
       if(!pJS.particles.size.anim.sync){
         this.vs = this.vs * Math.random();
       }
@@ -520,7 +520,7 @@ var pJS = function(tag_id, params){
 
       /* move the particle */
       if(pJS.particles.move.enable){
-        var ms = pJS.particles.move.speed/2;
+        var ms = pJS.particles.move.speed/5;
         p.x += p.vx * ms;
         p.y += p.vy * ms;
       }
