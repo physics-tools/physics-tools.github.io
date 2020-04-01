@@ -90,6 +90,25 @@ body{
   padding: 8px 22px;
 
 }
+.small-btn{
+  /* top: 40px;
+  right: 80px; */
+  left: 20%;
+  position: absolute;
+  text-decoration: none;
+  color: #fff;
+  border: 4px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(#42455a,#42455a),radial-gradient(circle at top left, rgb(19, 127, 198), rgb(249, 199, 46));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-size:x-large;
+}
+.small-btn span{
+  display: block;
+  padding: 8px 22px;
+
+}
 .hub-btn span{
   color: #fff !important;
   display: block;
@@ -100,7 +119,7 @@ body{
 .banner{
   width: 80%;
   height: 70%;
-  top: 25%;
+  top: 5%;
   left: 130px;
   position: absolute;
   color: #fff
@@ -130,7 +149,7 @@ body{
    font-size: 17px;
    margin: 30px 0 30px 40px;
    line-height: 25px;
-   color: #ebebeb;
+   color: #ffffff;
 }
 /* .app-picture{
   width: 120%;
